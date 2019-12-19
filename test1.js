@@ -1,15 +1,19 @@
-const getBalanceByCategoryAndDate = (transactions = [], category, start, end) => {
-		
-	let balance = 0;
+const getBalanceByCategoryAndDate = (
+  transactions = [],
+  category,
+  start,
+  end
+) => {
+  let balance = 0;
 
-	if (transactions.length) {
+  if (transactions.length) {
     transactions.forEach(transaction => {
-			if (transaction.category === category) {
-				let date = new Date(transaction.time);
-				if (date >= start && date <= end) {
-					balance += transaction.amount;
-				}
-			}
+      if (transaction.category === category) {
+        let date = new Date(transaction.time);
+        if (date >= start && date <= end) {
+          balance += transaction.amount;
+        }
+      }
     });
   }
 
