@@ -17,7 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/services": ["src/app/common/services/index.ts"],
+      "@app/actions": ["src/app/common/state/actions.ts"],
+      "@app/reducers": ["src/app/common/state/reducers.ts"],
+      "@app/effects": ["src/app/common/state/effects.ts"],
+      "@app/common": ["./src/app/common"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
