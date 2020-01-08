@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'app-image-search',
   templateUrl: './image-search.component.html',
@@ -14,8 +15,8 @@ export class ImageSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  public search(evt: InputEvent) {
-    this.searchImages.emit(evt.data);
+  public search(evt: any) {
+    this.searchImages.emit(evt.target.value);
   }
 
 }
