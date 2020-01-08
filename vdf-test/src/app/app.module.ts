@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import effects from '@app/effects';
 import { reducers } from '@app/reducers';
@@ -13,14 +14,15 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ImageListModule } from './image-list/image-list.module';
-import { ImageSearchModule } from './image-search/image-search.module';
+import { ImagePageModule } from './image-page/image-page.module';
+import { FavoritesModule } from './favorites/favorites.module';
 
 
 const BASE_MODULES = [
   BrowserModule,
   AppRoutingModule,
-  BrowserAnimationsModule
+  BrowserAnimationsModule,
+  HttpClientModule
 ];
 
 const NGRX_MODULES = [
@@ -30,8 +32,8 @@ const NGRX_MODULES = [
 ];
 
 const FEATURE_MODULES = [
-  ImageListModule,
-  ImageSearchModule
+  ImagePageModule,
+  FavoritesModule
 ];
 
 @NgModule({

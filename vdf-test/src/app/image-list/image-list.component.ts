@@ -1,10 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-
-import { loadImageList } from '../common/state/image/image.actions';
-import { imagesSelector } from '../common/state/image/image.reducer';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-image-list',
@@ -12,14 +6,10 @@ import { imagesSelector } from '../common/state/image/image.reducer';
   styleUrls: ['./image-list.component.scss']
 })
 export class ImageListComponent implements OnInit {
-  images$: Observable<any[]>;
-  constructor(private store: Store<any>) {}
 
-  ngOnInit() {
-    this.images$ = this.store.pipe(select(imagesSelector));
-  }
+  @Input() imageList: any[];
 
-  search(term: string) {
-    this.store.dispatch(loadImageList({ query: term }));
-  }
+  constructor() {}
+
+  ngOnInit() {}
 }

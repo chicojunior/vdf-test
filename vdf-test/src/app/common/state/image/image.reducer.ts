@@ -21,15 +21,3 @@ export function reducer(state: ImageState | undefined, action: Action) {
 
 export const allImagesSelector = createFeatureSelector('images');
 export const imagesSelector = createSelector(allImagesSelector, (images: ImageState) => images.imageList);
-
-
-// export function imageReducer(state = initialState, action: ImageActions): ImageState {
-//     switch (action.type) {
-//         case ImageActionTypes.LoadSuccess:
-//             return {
-//               list: action.payload
-//             };
-//           default:
-//             return state;
-//     }
-// }
